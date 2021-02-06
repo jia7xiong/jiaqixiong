@@ -1,41 +1,57 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import Box from '@material-ui/core/Box';
 
 function Copyright() {
+  const formatter = new Intl.DateTimeFormat('en-us', { month: 'short' });
+  let newDate = new Date();
+  const month = formatter.format(newDate);
+
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      Hello world!
+      Last Updated: {month} {newDate.getFullYear()}
       <br />
       {'Copyright © '}
-      <Link color="inherit" href="https://jiaqixiong.com/">
+      <Link color="inherit" href="https://jiaqixiong.netlify.com/">
         Jiaqi Xiong
-      </Link>
-      {' '}
-      {new Date().getFullYear()}
-      .
+      </Link>{' '}
+      . All rights reserved. Proudly built with&nbsp;
+      <Link color="inherit" href="https://nextjs.org/">Next.js</Link> and&nbsp; 
+      <Link color="inherit" href="https://material-ui.com/">Material-UI</Link>, hosted with&nbsp;
+      <Link color="inherit" href="https://www.netlify.com/">Netlify</Link>.
     </Typography>
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    // marginTop: theme.spacing(8),
-    padding: theme.spacing(6, 0),
-  },
-}));
-
 export default function Footer() {
-  const classes = useStyles();
+  const useStyles = {
+    wrapper: {
+      width: '100vw',
+      height: '210px',
+      bottom: 0,
+      position: 'absolute',
+      backgroundImage: 'url("/images/hero.jpg")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      paddingTop: '25px',
+      paddingBottom: '25px',
+    },
+    footer: {
+      width: '50vw',
+      left: '25%', 
+      position: 'relative', 
+      backgroundColor: '#dfefeb88',
+      borderRadius: '25px',
+    }
+  };
 
   return (
-    <footer className={classes.footer}>
-      <Container maxWidth="lg">
+    <Box style={useStyles.wrapper}>
+      <Box style={useStyles.footer}>
         <Copyright />
-      </Container>
-    </footer>
+      </Box>
+    </Box>
   );
 }

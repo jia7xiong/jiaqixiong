@@ -5,7 +5,8 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       light: '#ffffff',
-      dark: '#adbdb9',
+      // dark: '#adbdb9',
+      dark: '#cfe7e1',
       main: '#dfefeb',
       contrastText: '#000',
     },
@@ -16,9 +17,33 @@ const theme = createMuiTheme({
       contrastText: '#000',
     },
   },
-  // typography: {
-  //   
-  // },
+
+  typography: {
+    h4: {
+      fontFamily: 'BodoniFLF',
+      fontWeight: 'bold',
+    },
+    h6: {
+      fontFamily: 'BodoniFLF',
+      fontWeight: 'bold',
+    },
+    body1: {
+      fontFamily: 'Amaranth',
+    },
+    body2: {
+      fontFamily: 'Open Sans',
+    },
+  },
+
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: false,
+      md: 840,
+      lg: false,
+      xl: 1920,
+    }
+  }
 });
 
 export default theme;

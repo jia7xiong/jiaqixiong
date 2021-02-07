@@ -1,37 +1,48 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Slide from '@material-ui/core/Slide';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import PrimaryLink from '../components/PrimaryLink';
+import Button from '@material-ui/core/Button';
 // import IconButton from '@material-ui/core/IconButton';
 // import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles((theme) => ({
-  wrapper: {
+  root: {
+    // flexGrow: 1,
+    // boxShadow: 'none',
     width: '100vw',
-    maxHeight: '100vh',
-    top: '0',
-    position: 'fixed',
-    backgroundColor: theme.palette.primary.main,
-    paddingTop: '25px',
-    paddingBottom: '25px',
-    display: 'flex',
-    alignItems: 'center',
+    backgroundColor: theme.palette.primary.dark,
+    paddingLeft: '25px',
+    paddingRight: '25px',
   },
-  header: {
-    width: '50vw',
-    left: '25%', 
-    position: 'relative', 
+  toolBar: {
+    [theme.breakpoints.up('md')]:{
+      width: '840px',
+      margin: 'auto',
+    },  
   },
-  mainLink: {
-    color: '#3f3630',
-    // color: theme.palette.primary.dark,
-    fontWeight: 600,
+  homeButton: {
+    marginRight: theme.spacing(2),
+    padding: 0,
+    whiteSpace: 'nowrap',
+    // color: '#73b9a7',
+    // color: '#616d6a',
+    color: '#477267',
+    fontWeight: 'bold',
     fontSize: '1.5rem',
+    '&:hover': {
+      backgroundColor: theme.palette.secondary.main,
+    },
   },
-  sectionLink: {
+  sectionButton: {
+    // width:'100%',
+    whiteSpace: 'nowrap',
     fontSize: '1rem',
+    fontFamily: 'BodoniFLF',
+    fontWeight: 'bold',
   },
 }));
 
@@ -41,38 +52,38 @@ const sections = [
 ];
 
 export default function Header() {
+ 
   const classes = useStyles();
+  const trigger = useScrollTrigger();
 
   return (
-    <Box className={classes.wrapper} zIndex='drawer'> 
-      <Box className={classes.header}>
-        <Grid 
-          container 
-          spacing={3}
-          alignItems='center'
-        >
-          <Grid item>
-            <PrimaryLink
-              href={''}
-              className={classes.mainLink}
-            >
+    <>
+      <Slide appear={false} direction="down" in={!trigger}>
+        <AppBar className={classes.root}>
+          <Toolbar disableGutters className={classes.toolBar}>
+            <Grid container style={{alignItems:'stretch'}}>
+              <Button 
+                href={'/'}
+                className={classes.homeButton}
+                // disableRipple   
+              >
                 +7ʕ•ᴥ•ʔ
-            </PrimaryLink>
-          </Grid>
-            {sections.map((section) => (
-              <Grid item key={section.title}>
-                <Link
-                  color="textPrimary"
+              </Button>
+              {sections.map((section) => (
+                <Button
+                  key={section.title}
                   href={section.url}
-                  underline='none'
-                  className={classes.sectionLink}
+                  className={classes.sectionButton}
+                  // disableElevation={false}
                 >
                   {section.title}
-                </Link>
-              </Grid>
-            ))}
-        </Grid>
-      </Box>
-    </Box>
+                </Button>
+              ))}
+            </Grid >
+          </Toolbar>
+        </AppBar>
+      </Slide>
+      <Toolbar className={classes.root}/>
+    </>
   );
 }

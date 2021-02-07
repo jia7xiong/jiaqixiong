@@ -6,20 +6,23 @@ import Box from '@material-ui/core/Box';
 import PrimaryLink from '../components/PrimaryLink';
 
 const useStyles = makeStyles((theme) => ({
-  wrapper: {
+  root: {
     width: '100vw',
-    marginTop: '84px',
     backgroundColor: theme.palette.secondary.main,
-    paddingTop: '25px',
-    paddingBottom: '25px',
+    padding: '25px',
+    // flexGrow: 1,
   },
-  about: {
-    width: '50vw',
-    left: '25%', 
-    position: 'relative', 
-    // backgroundColor: theme.palette.primary.main,
-    display: 'flex',
-    flexGrow: 1,
+  wrapper: {
+    [theme.breakpoints.up('md')]:{
+      width: '840px',
+      margin: 'auto',
+    },
+    [theme.breakpoints.down('md')]:{
+      margin: 0,
+    }
+  },
+  hero: {
+    // fontFamily: '',
   },
 }));
 
@@ -27,66 +30,73 @@ export default function Landing() {
   const classes = useStyles();
 
   return (
-    <Box className={classes.wrapper}>   
-      <Box className={classes.about} id="about-me">
-        <Grid container
-          alignItems='center'
-          justify='space-between'
-        >
-          <Grid item xs={12}>
-            <Typography component="h1" variant="h6" color="inherit" gutterBottom>
-              ➜ helloWorld()
-            </Typography>
-          </Grid>
+    <Box className={classes.root} id='about-me'>   
+      <Grid container spacing={3} className={classes.wrapper}>
+        <Grid item xs={12} style={{padding:'0'}}>
+          <Typography component="h3" variant="h6" gutterBottom>
+            ➜ helloWorld()
+          </Typography>
+        </Grid>
 
-          <Grid item xs={4}>
-            <Grid container justify = "center">
-              {<img style={{ display: 'inline-block', width: '50%', height: '50%' ,borderRadius: '50%' }} src={'images/profile.jpg'} alt="Avatar"/>}
-            </Grid>
-          </Grid>
-
-          <Grid item xs={8}>
+        <Grid item xs={12} style={{padding:'0'}}>
+          <Grid container
+            alignItems='center'
+            justify='center'
+            spacing={10}
+          >
             <Grid item>
-              <Typography variant="h4" color="inherit" paragraph>
-                Hi, I'm Jiaqi Xiong&nbsp; 
-                <PrimaryLink href='https://github.com/jia7xiong'>(@jia7xiong)</PrimaryLink>
-              </Typography>
+              {/* <Grid container justify='center'> */}
+                {<img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src={'images/profile.jpg'} alt="Avatar"/>}
+              {/* </Grid> */}
             </Grid>
-            <Grid item>
-              <Typography variant="body1" color="inherit" paragraph>
-                Upcoming engineer interested in software development
-              </Typography>
-              <Typography variant="body1" color="inherit" paragraph>
-                Currently pursuing a Master's degree at&nbsp; 
-                <PrimaryLink href='https://viterbischool.usc.edu/'>University of Southern California</PrimaryLink>
-              </Typography>
-              <Typography variant="body1" color="inherit" paragraph>
-                Every developer creates a brain-computer interface for his/her databases.
-              </Typography>
-              <Typography variant="body2" color="inherit" paragraph>
-                Curiosity &middot;  Learn &middot; Practice &middot; Share
-              </Typography>
-            </Grid>
-          </Grid>
 
-          <Grid item xs={12}>
-            <Typography component="h1" variant="h6" color="inherit" gutterBottom>
-              ➜ getInTouch()
-            </Typography>
-          </Grid>
-          <Grid container justify='center' alignItems='flex-end'>
-            <Grid item xs={1}>
-              <PrimaryLink href='resume.pdf' iconType='paper' />
-            </Grid>
-            <Grid item xs={1}>
-              <PrimaryLink iconType='linkedin' />
-            </Grid>
-            <Grid item xs={1}>
-              <PrimaryLink iconType='github' />
+            <Grid item xs={8}>
+              <Grid item>
+                <Typography variant="h4" paragraph className={classes.hero}>
+                  Hi, I'm Jiaqi Xiong&nbsp; 
+                  <PrimaryLink href='https://github.com/jia7xiong'>(@jia7xiong)</PrimaryLink>
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant="body1" paragraph>
+                  Upcoming engineer interested in software development
+                </Typography>
+                <Typography variant="body1" paragraph>
+                  Currently pursuing a Master's degree at&nbsp; 
+                  <PrimaryLink href='https://viterbischool.usc.edu/'>University of Southern California</PrimaryLink>
+                </Typography>
+                <Typography variant="body2" paragraph>
+                  Every developer creates a brain-computer interface for his/her databases.
+                </Typography>
+                <Typography variant="body2" paragraph>
+                  Curiosity &middot;  Learn &middot; Practice &middot; Contribute
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Box>
+
+        <Grid item xs={12} style={{padding:'0', marginTop: '25px'}}>
+          <Typography component="h3" variant="h6" gutterBottom>
+            ➜ getInTouch()
+          </Typography>
+        </Grid>
+
+        <Grid item xs={12} style={{padding:'0'}}>
+          <Grid container alignItems='flex-end' justify='flex-start' spacing={5}>
+            <Grid item xs={4}/>
+            <Grid item>
+              <PrimaryLink href='resume.pdf' iconType='paper' />
+            </Grid>
+            <Grid item>
+              <PrimaryLink iconType='github' />
+            </Grid>
+            <Grid item>
+              <PrimaryLink iconType='linkedin' />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
     </Box>
   );
 }

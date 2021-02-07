@@ -1,45 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import CodeIcon from '@material-ui/icons/Code';
 import { FaLink } from "react-icons/fa";
 import VideocamIcon from '@material-ui/icons/Videocam';
 import DescriptionIcon from '@material-ui/icons/Description';
-import { makeStyles } from '@material-ui/core/styles';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Grid from '@material-ui/core/Grid';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-const PrimaryLink = function PrimaryLink(props) {
+export default function PrimaryLink(props) {
   const { iconType, children, ...other} = props;
-
-  let icon;
-  let url;
-
-  switch (iconType) {
-    case 'code':
-      icon = <CodeIcon style={{marginRight: '5px'}} />;
-      break;
-    case 'website':
-      icon = <FaLink style={{marginRight: '5px'}} />;
-      break;
-    case 'demo':
-      icon = <VideocamIcon style={{marginRight: '5px'}} />;
-      break;
-    case 'paper':
-      icon = <DescriptionIcon style={{marginRight: '5px'}} />;
-      break;
-    case 'github':
-      icon = <GitHubIcon style={{marginRight: '5px'}} />;
-      url = 'https://github.com/jia7xiong';
-      break;
-    case 'linkedin':
-      icon = <LinkedInIcon style={{marginRight: '5px'}} />;
-      url = 'https://www.linkedin.com/in/jiaqixiong/';
-      break;
-    default:
-      break;
-  }
 
   const useStyles = makeStyles((theme)=>({
     wrapper: {
@@ -57,11 +28,42 @@ const PrimaryLink = function PrimaryLink(props) {
         color: theme.palette.primary.dark,
       },
     },
+    iconStyle: {
+      marginRight: '5px',
+    }
   }));
-  
+
   const classes = useStyles();
 
-  if (children) {
+  let icon;
+  let url;
+
+  switch (iconType) {
+    case 'code':
+      icon = <CodeIcon style={{}} />;
+      break;
+    case 'website':
+      icon = <FaLink className={classes.iconStyle} />;
+      break;
+    case 'demo':
+      icon = <VideocamIcon className={classes.iconStyle} />;
+      break;
+    case 'paper':
+      icon = <DescriptionIcon className={classes.iconStyle} />;
+      break;
+    case 'github':
+      icon = <GitHubIcon className={classes.iconStyle} />;
+      url = 'https://github.com/jia7xiong';
+      break;
+    case 'linkedin':
+      icon = <LinkedInIcon className={classes.iconStyle} />;
+      url = 'https://www.linkedin.com/in/jiaqixiong/';
+      break;
+    default:
+      break;
+  }
+
+  if (children && iconType) {
     return (
       <span className={classes.wrapper}>
         {icon}
@@ -71,15 +73,21 @@ const PrimaryLink = function PrimaryLink(props) {
       </span>
     );
   }
-  else {
+  else if (children) {
     return (
-      <Grid container justify='center'>
-        <Link color='textPrimary' className={classes.iconLink} href={url} underline='none' {...other}>
-          {icon}
-        </Link>
-      </Grid>
+      <Link color='textPrimary' className={classes.textLink} underline='none' {...other}>
+        {children}
+      </Link>
     );
   }
+  else {
+    return (
+      <Link color='textPrimary' className={classes.iconLink} href={url} {...other}>
+        {icon}
+      </Link>
+    );
+  }
+
 };
 
 PrimaryLink.propTypes = {
@@ -91,5 +99,3 @@ PrimaryLink.defaultProps = {
   iconType: "",
   children: "",
 };
-
-export default PrimaryLink;

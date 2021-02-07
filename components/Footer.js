@@ -1,7 +1,8 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
 
 function Copyright() {
   const formatter = new Intl.DateTimeFormat('en-us', { month: 'short' });
@@ -24,32 +25,36 @@ function Copyright() {
   );
 }
 
-export default function Footer() {
-  const useStyles = {
-    wrapper: {
-      width: '100vw',
-      height: '210px',
-      bottom: 0,
-      position: 'absolute',
-      backgroundImage: 'url("/images/hero.jpg")',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      paddingTop: '25px',
-      paddingBottom: '25px',
+const useStyles = makeStyles((theme)=>({
+  wrapper: {
+    width: '100vw',
+    height: '210px',
+    bottom: 0,
+    position: 'fixed',
+    padding: '25px',
+    backgroundImage: 'url("/images/hero.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  },
+  footer: {
+    [theme.breakpoints.up('md')]:{
+      width: '840px',
+      margin: 'auto',
     },
-    footer: {
-      width: '50vw',
-      left: '25%', 
-      position: 'relative', 
-      backgroundColor: '#dfefeb88',
-      borderRadius: '25px',
-    }
-  };
+    paddingTop: '15px',
+    paddingBottom: '15px',
+    backgroundColor: '#dfefeb88',
+    borderRadius: '25px',
+  }
+}));
+
+export default function Footer() {
+  const classes = useStyles();
 
   return (
-    <Box style={useStyles.wrapper}>
-      <Box style={useStyles.footer}>
+    <Box className={classes.wrapper} zIndex='1099'>
+      <Box className={classes.footer}>
         <Copyright />
       </Box>
     </Box>

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import PrimaryLink from '../components/PrimaryLink';
+import PrimaryLink from './PrimaryLink';
 
 const useStyles = makeStyles((theme) => ({
   root: {

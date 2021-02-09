@@ -40,7 +40,7 @@ export default function PrimaryLink(props) {
 
   switch (iconType) {
     case 'code':
-      icon = <CodeIcon style={{}} />;
+      icon = <CodeIcon className={classes.iconStyle} />;
       break;
     case 'website':
       icon = <FaLink className={classes.iconStyle} />;
@@ -67,7 +67,7 @@ export default function PrimaryLink(props) {
     return (
       <span className={classes.wrapper}>
         {icon}
-        <Link color='textPrimary' className={classes.textLink} underline='none' {...other}>
+        <Link color='textPrimary' className={classes.textLink} underline='none' variant='body1' {...other}>
           {children}
         </Link>
       </span>

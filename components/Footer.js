@@ -13,7 +13,7 @@ function Copyright() {
       Last Updated: {month} {newDate.getFullYear()}
       <br />
       {'Copyright © '}
-      <Link color="inherit" href="https://jiaqixiong.netlify.com/">
+      <Link color="inherit" href="https://jiaqixiong.me/">
         Jiaqi Xiong
       </Link>{' '}
       . All rights reserved. Proudly built with&nbsp;

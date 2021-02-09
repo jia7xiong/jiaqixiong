@@ -1,0 +1,189 @@
+[
+    { 
+      "title": "Visualiztion of NBA Game Performance", 
+      "url": "https://nba-game-performance.netlify.app/", 
+      "time": "Fall 2020", 
+      "media": {
+          "component": "img",
+          "path": "images/shooting.gif",
+          "alt": "Cover for NBA project",
+          "title": "Shooting"
+      },
+      "tags": ["React", "D3.js", "MongoDB", "Python"], 
+      "links": [
+        {
+          "url": "https://nba-game-performance.netlify.app/",
+          "iconType": "website",
+          "caption": "WEBSITE"
+        },
+        {
+          "url": "https://github.com/jia7xiong/nba-game-performance",
+          "iconType": "code",
+          "caption": "CODE"
+        },
+        {
+          "url": "/demo/nba-game-performance",
+          "iconType": "demo",
+          "caption": "DEMO"
+        }
+      ],
+      "description": "A scalable website consisting 6 interactive, responsive and animated charts for depicting the shooting performance in a game, analyzing players’ contribution, representing the subordinate relationship hierarchically, showing teams’ average game performance, summarizing players’ nationality, exploring arena locations. "
+    },
+
+    { 
+      "title": "Personalized Meal Planning System", 
+      "url": "https://github.com/jia7xiong/PersonalizedMealRecommender", 
+      "time": "Spring 2020", 
+      "media": {
+          "component": "img",
+          "path": "images/salad.jpg",
+          "alt": "Cover for Meal Plan project",
+          "title": "Salad"
+      },
+      "tags": ["Beautiful Soup", "Selenium", "Pandas", "Optimization"], 
+      "links": [
+        {
+          "url": "https://github.com/jia7xiong/PersonalizedMealRecommender",
+          "iconType": "code",
+          "caption": "CODE"
+        },
+        {
+          "url": "documents/meal-plan-report.pdf",
+          "iconType": "paper",
+          "caption": "REPORT"
+        },
+        {
+          "url": "documents/meal-plan-slides.pdf",
+          "iconType": "slides",
+          "caption": "SLIDES"
+        }
+      ],
+      "description": "This system generates a 5-day meal plan for two people in the same household to satisfy their nutrition, budget,and time availability requirements, while maximizing total ratings and minimizing difference between their cooking time."
+    },
+
+    { 
+      "title": "Oracle of Blade", 
+      "url": "demo/oracle-of-blade", 
+      "time": "Spring 2019", 
+      "media": {
+          "component": "img",
+          "path": "images/blade.jpg",
+          "alt": "Cover for Oracle of Blade game",
+          "title": "Oracle of Blade"
+      },
+      "tags": ["Unreal Engine", "Scrum"], 
+      "links": [
+        {
+          "url": "demo/oracle-of-blade",
+          "iconType": "demo",
+          "caption": "DEMO"
+        },
+        {
+          "url": "documents/blade.pdf",
+          "iconType": "paper",
+          "caption": "REPORT"
+        }
+      ],
+      "description": ""
+    },
+
+    { 
+      "title": "Spelling Corrector", 
+      "url": "https://github.com/jia7xiong/SpellChecker", 
+      "time": "Spring 2019", 
+      "media": {
+          "component": "img",
+          "path": "images/spelling.jpg",
+          "alt": "Cover for Spelling Corrector project",
+          "title": "Spelling Corrector"
+      },
+      "tags": ["Python", "Levenshtein distance"], 
+      "links": [
+        {
+          "url": "https://github.com/jia7xiong/SpellChecker",
+          "iconType": "code",
+          "caption": "CODE"
+        }
+      ],
+      "description": "This corrector will provide correct alternatives for each of misspelled words in the user's input file, and can generate a most probable correct version through training on a large corpus."
+    },
+
+    { 
+      "title": "MiniJava-MIPS Compiler", 
+      "url": "demo/minijava-compiler", 
+      "time": "Winter 2019", 
+      "media": {
+          "component": "img",
+          "path": "images/compiler.jpg",
+          "alt": "Cover for M-M Compiler project",
+          "title": "M-M Compiler"
+      },
+      "tags": ["Java", "JavaCC"], 
+      "links": [
+        {
+          "url": "demo/minijava-compiler",
+          "iconType": "slides",
+          "caption": "SLIDES"
+        },
+        {
+          "url": "documents/compiler.pdf",
+          "iconType": "paper",
+          "caption": "PAPER"
+        }
+      ],
+      "description": "This compiler is implemented through a four-phase design to translate a program written in MiniJava langugae to MIPS instructions."
+    },
+
+    { 
+      "title": "Lava Particle Simulation", 
+      "url": "https://github.com/jia7xiong/lava-particle-simulation", 
+      "time": "Winter 2019", 
+      "media": {
+          "component": "img",
+          "path": "images/lava.jpg",
+          "alt": "Cover for Lava Simulation project",
+          "title": "Lava Simulation"
+      },
+      "tags": ["C++", "OpenGL"], 
+      "links": [
+        {
+          "url": "https://github.com/jia7xiong/lava-particle-simulation",
+          "iconType": "code",
+          "caption": "CODE"
+        },
+        {
+          "url": "images/lava.gif",
+          "iconType": "demo",
+          "caption": "DEMO"
+        }
+      ],
+      "description": "This OpenGL program uses animated particles to simulate the appearance and motion of lava special effects, and provide supports to mouse and keyboard controls for better observation. "
+    },
+
+    { 
+      "title": "8-puzzle Solver", 
+      "url": "https://github.com/jia7xiong/eight-puzzle-solver", 
+      "time": "Fall 2018", 
+      "media": {
+          "component": "img",
+          "path": "images/puzzle.jpg",
+          "alt": "Cover for 8-Puzzle project",
+          "title": "8-Puzzle"
+      },
+      "tags": ["C++", "A*"], 
+      "links": [
+        {
+          "url": "https://github.com/jia7xiong/eight-puzzle-solver",
+          "iconType": "code",
+          "caption": "CODE"
+        },
+        {
+          "url": "documents/puzzle.pdf",
+          "iconType": "paper",
+          "caption": "REPORT"
+        }
+      ],
+      "description": "The 8-Puzzle Solver generates step-by-step trace using A* search algorithm and explores efficiency of 3 heuristic functions. Ready for larger size puzzles."
+    }
+  ]
+

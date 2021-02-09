@@ -18,8 +18,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Jiaqi Xiong</title>
+        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="minimum-scale=0.5, maximum-scale=3.0, initial-scale=1, width=device-width" />
-        <link rel="icon" href="../public/favicon.ico" />
         {/* PWA primary color */}
         <meta name="theme-color" content={theme.palette.primary.main} />
         <link

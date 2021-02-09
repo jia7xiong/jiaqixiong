@@ -32,7 +32,7 @@ export default function Landing() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} id='about-me'>   
+    <div className={classes.root}>   
       <Grid container className={classes.wrapper} justify='space-evenly' direction='column'>
         <Grid item>
           <Typography component="h1" variant="h4" gutterBottom>
@@ -58,7 +58,7 @@ export default function Landing() {
                   Upcoming engineer interested in software development
                 </Typography>
                 <Typography variant="body1" paragraph>
-                  Currently pursuing a Master's degree at&nbsp; 
+                  Pursuing a Master's degree at&nbsp; 
                   <PrimaryLink href='https://viterbischool.usc.edu/'>University of Southern California</PrimaryLink>
                 </Typography>
                 <Typography variant="body2" paragraph>
@@ -81,7 +81,7 @@ export default function Landing() {
           <Grid container alignItems='flex-end' justify='flex-start' spacing={5}>
             <Grid item xs={4}/>
             <Grid item>
-              <PrimaryLink href='resume.pdf' iconType='paper' />
+              <PrimaryLink href='https://drive.google.com/file/d/1qfQDdf5uCDUWULXxlKZl4DXr-xsca30O/view?usp=sharing' iconType='paper' />
             </Grid>
             <Grid item>
               <PrimaryLink iconType='github' />

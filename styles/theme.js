@@ -5,16 +5,15 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       light: '#ffffff',
-      // dark: '#adbdb9',
-      dark: '#cfe7e1',
+      // dark: '#cfe7e1',
+      dark: '#adbdb9',
       main: '#dfefeb',
       contrastText: '#000',
     },
     secondary: {
       light: '#ffffff',
-      dark: '#c9bdb6',
-      main: '#fcefe8',
-      // main: '#fdf7f3',
+      dark: '#cac4c0',
+      main: '#fdf7f3',
       contrastText: '#000',
     },
   },
@@ -23,19 +22,24 @@ const theme = createMuiTheme({
     h4: {
       fontFamily: 'BodoniFLF',
       fontWeight: 'bold',
+      fontSize: '2.35rem',
     },
     h6: {
       fontFamily: 'BodoniFLF',
       fontWeight: 'bold',
     },
     body1: {
-      fontFamily: 'Amaranth',
+      fontFamily: 'Tiempo',
+      fontSize: '1.1rem',
     },
     body2: {
+      fontFamily: 'Plantin',
+      fontSize: '0.9rem',
+    },
+    caption: {
       fontFamily: 'Open Sans',
     },
   },
-
   // breakpoints: {
   //   values: {
   //     xs: 0,

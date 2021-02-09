@@ -43,8 +43,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: 'Projects', url: '#projects' },
-  { title: 'About Me', url: '#about-me' },
+  { title: 'Projects', url: '/#projects' },
+  { title: 'About Me', url: '/#about-me' },
 ];
 
 export default function Header() {
@@ -79,7 +79,7 @@ export default function Header() {
           </Toolbar>
         </AppBar>
       </Slide>
-      <Toolbar className={classes.root}/>
+      <Toolbar className={classes.root} id='about-me'/>
     </>
   );
 }

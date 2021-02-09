@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import CodeIcon from '@material-ui/icons/Code';
-import { FaLink } from "react-icons/fa";
 import VideocamIcon from '@material-ui/icons/Videocam';
 import DescriptionIcon from '@material-ui/icons/Description';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import SlideshowIcon from '@material-ui/icons/Slideshow';
+import LinkIcon from '@material-ui/icons/Link';
 
 export default function PrimaryLink(props) {
   const { iconType, children, ...other} = props;
@@ -43,7 +44,7 @@ export default function PrimaryLink(props) {
       icon = <CodeIcon className={classes.iconStyle} />;
       break;
     case 'website':
-      icon = <FaLink className={classes.iconStyle} />;
+      icon = <LinkIcon className={classes.iconStyle} />;
       break;
     case 'demo':
       icon = <VideocamIcon className={classes.iconStyle} />;
@@ -59,6 +60,9 @@ export default function PrimaryLink(props) {
       icon = <LinkedInIcon className={classes.iconStyle} />;
       url = 'https://www.linkedin.com/in/jiaqixiong/';
       break;
+    case 'slides':
+      icon = <SlideshowIcon className={classes.iconStyle} />;
+      break;
     default:
       break;
   }
@@ -67,7 +71,7 @@ export default function PrimaryLink(props) {
     return (
       <span className={classes.wrapper}>
         {icon}
-        <Link color='textPrimary' className={classes.textLink} underline='none' variant='body1' {...other}>
+        <Link color='textPrimary' className={classes.textLink} underline='none' style={{fontFamily: 'Amaranth'}} {...other}>
           {children}
         </Link>
       </span>

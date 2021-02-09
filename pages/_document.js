@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body style={{backgroundColor: theme.palette.primary.main}}>
+        <body style={{backgroundColor: theme.palette.secondary.main}}>
           <Main />
           <NextScript />
         </body>

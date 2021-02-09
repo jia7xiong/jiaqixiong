@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import Avatar from '@material-ui/core/Avatar';
 import PrimaryLink from '../components/PrimaryLink';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,8 +47,10 @@ export default function Landing() {
           >
             <Grid item>
               {/* <Grid container justify='center'> */}
-                {<img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src={'images/profile.jpg'} alt="Avatar"/>}
+                {/* {<img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src={'images/profile.jpg'} alt="Avatar"/>} */}
+                <Avatar alt="Jiaqi Xiong" src="images/profile.jpg" style={{ width: '200px', height: '200px'}}/>
               {/* </Grid> */}
+              
             </Grid>
 
             <Grid item xs={8}>

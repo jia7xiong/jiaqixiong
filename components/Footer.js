@@ -28,7 +28,7 @@ function Copyright() {
 const useStyles = makeStyles((theme)=>({
   wrapper: {
     width: '100vw',
-    height: '210px',
+    // height: '210px',
     bottom: 0,
     position: 'fixed',
     padding: '25px',

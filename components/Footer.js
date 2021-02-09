@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
@@ -28,24 +27,22 @@ function Copyright() {
 const useStyles = makeStyles((theme)=>({
   wrapper: {
     width: '100vw',
-    // height: '210px',
     bottom: 0,
-    position: 'fixed',
     padding: '25px',
     backgroundImage: 'url("/images/hero.jpg")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
+    zIndex: 1099,
   },
   footer: {
-    [theme.breakpoints.up('md')]:{
-      width: '840px',
-      margin: 'auto',
-    },
+    maxWidth: '840px',
+    margin: 'auto',
     paddingTop: '15px',
     paddingBottom: '15px',
-    backgroundColor: '#dfefeb88',
+    backgroundColor: theme.palette.primary.main,
     borderRadius: '25px',
+    opacity: 0.8,
   }
 }));
 
@@ -53,10 +50,10 @@ export default function Footer() {
   const classes = useStyles();
 
   return (
-    <Box className={classes.wrapper} zIndex='1099'>
-      <Box className={classes.footer}>
+    <div className={classes.wrapper}>
+      <div className={classes.footer}>
         <Copyright />
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }

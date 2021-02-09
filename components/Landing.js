@@ -2,28 +2,29 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import PrimaryLink from '../components/PrimaryLink';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100vw',
+    minHeight: '88vh',
     backgroundColor: theme.palette.secondary.main,
     padding: '25px',
-    // flexGrow: 1,
   },
   wrapper: {
-    [theme.breakpoints.up('md')]:{
-      width: '840px',
-      margin: 'auto',
-    },
-    [theme.breakpoints.down('md')]:{
-      margin: 0,
-    }
+    maxWidth: '840px',
+    minHeight: '88vh',
+    margin: 'auto',
   },
-  hero: {
-    // fontFamily: '',
+  introductionBlock: {
+    width:"100%",
+    wordWrap: 'break-word',
+  },
+  introduction: {
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: '75px', 
+    },
   },
 }));
 
@@ -31,36 +32,28 @@ export default function Landing() {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root} id='about-me'>   
-      <Grid container spacing={3} className={classes.wrapper}>
-        <Grid item xs={12} style={{padding:'0'}}>
-          <Typography component="h3" variant="h6" gutterBottom>
+    <div className={classes.root} id='about-me'>   
+      <Grid container className={classes.wrapper} justify='space-evenly' direction='column'>
+        <Grid item>
+          <Typography component="h1" variant="h4" gutterBottom>
             ➜ helloWorld()
           </Typography>
-        </Grid>
-
-        <Grid item xs={12} style={{padding:'0'}}>
+        
           <Grid container
             alignItems='center'
             justify='center'
-            spacing={10}
+            spacing={2}
           >
-            <Grid item>
-              {/* <Grid container justify='center'> */}
-                {/* {<img style={{ width: '200px', height: '200px', borderRadius: '50%' }} src={'images/profile.jpg'} alt="Avatar"/>} */}
+            <Grid item md={3}>
                 <Avatar alt="Jiaqi Xiong" src="images/profile.jpg" style={{ width: '200px', height: '200px'}}/>
-              {/* </Grid> */}
-              
             </Grid>
-
-            <Grid item xs={8}>
-              <Grid item>
-                <Typography variant="h4" paragraph className={classes.hero}>
+            
+            <Grid item md={9} className={classes.introductionBlock}>
+              <div className={classes.introduction}>
+                <Typography variant="h4" component='h2' paragraph>
                   Hi, I'm Jiaqi Xiong&nbsp; 
                   <PrimaryLink href='https://github.com/jia7xiong'>(@jia7xiong)</PrimaryLink>
                 </Typography>
-              </Grid>
-              <Grid item>
                 <Typography variant="body1" paragraph>
                   Upcoming engineer interested in software development
                 </Typography>
@@ -74,18 +67,17 @@ export default function Landing() {
                 <Typography variant="body2" paragraph>
                   Curiosity &middot;  Learn &middot; Practice &middot; Contribute
                 </Typography>
-              </Grid>
+              </div>
             </Grid>
+            
           </Grid>
         </Grid>
 
-        <Grid item xs={12} style={{padding:'0', marginTop: '25px'}}>
-          <Typography component="h3" variant="h6" gutterBottom>
+        <Grid item>
+          <Typography component="h1" variant="h4" gutterBottom>
             ➜ getInTouch()
           </Typography>
-        </Grid>
 
-        <Grid item xs={12} style={{padding:'0'}}>
           <Grid container alignItems='flex-end' justify='flex-start' spacing={5}>
             <Grid item xs={4}/>
             <Grid item>
@@ -99,7 +91,8 @@ export default function Landing() {
             </Grid>
           </Grid>
         </Grid>
+
       </Grid>
-    </Box>
+    </div>
   );
 }

@@ -11,23 +11,20 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // flexGrow: 1,
     // boxShadow: 'none',
     width: '100vw',
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.primary.main,
     paddingLeft: '25px',
     paddingRight: '25px',
   },
-  toolBar: {
-    [theme.breakpoints.up('md')]:{
-      width: '840px',
-      margin: 'auto',
-    },  
+  toolBar: {  
+    backgroundColor: theme.palette.primary.main,
+    width: '840px',
+    margin: 'auto',
   },
   homeButton: {
     marginRight: theme.spacing(2),
     padding: 0,
-    whiteSpace: 'nowrap',
     // color: '#73b9a7',
     // color: '#616d6a',
     color: '#477267',
@@ -39,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionButton: {
     // width:'100%',
-    whiteSpace: 'nowrap',
     fontSize: '1rem',
     fontFamily: 'BodoniFLF',
     fontWeight: 'bold',
@@ -61,11 +57,11 @@ export default function Header() {
       <Slide appear={false} direction="down" in={!trigger}>
         <AppBar className={classes.root}>
           <Toolbar disableGutters className={classes.toolBar}>
-            <Grid container style={{alignItems:'stretch'}}>
+            <Grid container alignItems='baseline'>
               <Button 
                 href={'/'}
                 className={classes.homeButton}
-                // disableRipple   
+                disableRipple   
               >
                 +7ʕ•ᴥ•ʔ
               </Button>

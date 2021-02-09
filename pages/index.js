@@ -8,10 +8,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div style={{marginBottom: '210px'}}>
-        <Landing />
-        <Project />
-      </div>
+      <Landing />
+      <Project />
       <Footer />
     </>
   );
